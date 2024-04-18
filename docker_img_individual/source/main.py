@@ -1,11 +1,9 @@
-import matplotlib.pyplot as plt
 import numpy as np
+from tqdm import tqdm
 
-base_number = int(input('insert the base number: '))
-
-x = np.linspace(0, 10, 1000)
-y = base_number ** x
-
-plt.plot(x, y)
-plt.show()
+num_sum = 0
+number_of_randoms = 1e6
+for _ in tqdm(range(number_of_randoms)):
+    num_sum += np.random.randint(10, 1000)
+print(num_sum / number_of_randoms)
 
